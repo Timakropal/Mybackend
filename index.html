@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="asdf">asdf</div>
+    <button class="but" onclick="mufucn()">button</button>
+
+    <script>
+      async function mufucn() {
+        let divs = document.getElementsByClassName("asdf")[0];
+        const res = await fetch("http://localhost:3001/main", {
+          method: "GET",
+          header: { "Content-Type": "application/json" },
+        });
+
+        const blue = await res.json();
+        console.log(res);
+        console.log(blue);
+
+        divs.style.color = blue.blue;
+      }
+    </script>
+  </body>
+</html>
+
